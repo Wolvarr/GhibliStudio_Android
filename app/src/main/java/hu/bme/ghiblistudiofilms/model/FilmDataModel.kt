@@ -13,5 +13,7 @@ data class FilmDataModel (
         val director: String,
         val producer: String,
         val releaseData: Date,
-        val playTime: Int
+        val playTime: Int,
+        //if the user deletes an entity, that the API provides
+        val isDeleted: Boolean
         )

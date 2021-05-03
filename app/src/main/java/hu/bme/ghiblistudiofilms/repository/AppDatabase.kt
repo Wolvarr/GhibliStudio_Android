@@ -11,8 +11,7 @@ abstract class AppDatabase :RoomDatabase() {
 
     //TODO: A felhasználó által megadott változtatások lekérdezése az API-tól kapot adatokhoz képest (újonnan hozzáadott, törölt és szerkesztett filmek)
 
-    abstract fun filmDao(): FilmDetailedDAO
-    abstract fun filmListDao(): FilmListDAO
+    abstract fun filmDao(): FilmDAO
 
     companion object {
         private var INSTANCE: AppDatabase? = null
