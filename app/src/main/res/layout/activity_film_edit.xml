@@ -4,6 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
     tools:context=".UI.FilmEditActivity">
+
+
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:layout_weight="2"
+android:orientation="vertical"
+android:weightSum="4">
+
+<EditText
+    android:id="@+id/filmTitleEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:textSize="38sp"
+    android:textColor="@color/white"
+    android:layout_marginTop="5dp"
+    android:text="Title" />
+
+<EditText
+    android:id="@+id/originalTitleEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:text="Original title"
+    android:textSize="24sp"
+    android:textColor="@color/white" />
+
+<EditText
+    android:id="@+id/descriptionEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_margin"
+    android:layout_gravity="center_horizontal"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:text="Description" />
+
+<EditText
+    android:id="@+id/directorEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_margin"
+    android:layout_gravity="center_horizontal"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:text="Director" />
+
+<EditText
+    android:id="@+id/producerEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_margin"
+    android:layout_gravity="center_horizontal"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:text="Producer" />
+
+<EditText
+    android:id="@+id/releaseEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_margin"
+    android:layout_gravity="center_horizontal"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:text="Release date" />
+
+<EditText
+    android:id="@+id/playTimeEdit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/text_margin"
+    android:layout_gravity="center_horizontal"
+    android:textSize="18sp"
+    android:textColor="@color/white"
+    android:text="Playtime" />
+
+<Button
+    android:id="@+id/discard_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Discard"
+    android:layout_margin="4dp"/>
+
+<Button
+    android:id="@+id/save_btn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Save"
+    android:layout_margin="4dp"/>
+
+</LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

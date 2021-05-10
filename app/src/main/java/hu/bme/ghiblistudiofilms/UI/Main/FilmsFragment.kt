@@ -74,11 +74,8 @@ class FilmsFragment : Fragment(), MainScreen {
 
     companion object {
         const val KEY_FILMS = "KEY_FILMS"
-
-        // TODO: Customize parameter argument names
         const val ARG_COLUMN_COUNT = "column-count"
 
-        // TODO: Customize parameter initialization
         @JvmStatic
         fun newInstance(columnCount: Int) =
             FilmsFragment().apply {

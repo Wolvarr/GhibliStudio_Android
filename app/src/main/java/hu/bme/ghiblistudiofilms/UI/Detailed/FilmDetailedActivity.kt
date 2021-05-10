@@ -18,7 +18,6 @@ import javax.inject.Inject
 class FilmDetailedActivity : AppCompatActivity(), DetailedScreen {
 
     private var filmId: String? = null
-    private var filmData: FilmDataModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +44,7 @@ class FilmDetailedActivity : AppCompatActivity(), DetailedScreen {
     private fun editFilm() {
 
         val intent = Intent(this, FilmEditActivity::class.java)
-        intent.putExtra(KEY_EDIT_FILM,  Gson().toJson(filmData))
+        intent.putExtra(KEY_EDIT_FILM,  filmId)
         startActivity(intent)
     }
 
