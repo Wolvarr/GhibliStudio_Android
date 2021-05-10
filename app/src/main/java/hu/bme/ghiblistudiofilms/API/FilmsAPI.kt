@@ -18,7 +18,7 @@ interface FilmsApi {
     fun filmsGet(
             @retrofit2.http.Query("fields") fields: String?,
             @retrofit2.http.Query("limit") limit: Long?
-    ): Call<List<FilmListModel>>?
+    ): Call<MutableList<FilmListModel>>?
 
     /**
      * Film ID

@@ -3,6 +3,7 @@ package hu.bme.ghiblistudiofilms.UI.Detailed
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.google.gson.Gson
 import hu.bme.ghiblistudiofilms.R
 import hu.bme.ghiblistudiofilms.UI.FilmEditActivity
@@ -18,6 +19,7 @@ import javax.inject.Inject
 class FilmDetailedActivity : AppCompatActivity(), DetailedScreen {
 
     private var filmId: String? = null
+    private var filmDataModel: FilmDataModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +38,8 @@ class FilmDetailedActivity : AppCompatActivity(), DetailedScreen {
     }
 
     private fun deleteFilm() {
-        detailedPresenter.deleteFilm(filmId!!)
+        detailedPresenter.deleteFilm(filmDataModel!!)
+        Toast.makeText(this, "Succesfully deleted item!", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
@@ -62,6 +65,7 @@ class FilmDetailedActivity : AppCompatActivity(), DetailedScreen {
         }
 
     override fun showFilmDetails(filmData: FilmDataModel) {
+        this.filmDataModel = filmData
         filmTitle.text = filmData.title
         originalTitle.text = filmData.original_title_romanised
         description.text = filmData.description

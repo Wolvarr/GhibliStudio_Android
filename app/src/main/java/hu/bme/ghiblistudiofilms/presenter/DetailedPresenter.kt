@@ -3,6 +3,7 @@ package hu.bme.ghiblistudiofilms.presenter
 import android.util.Log
 import hu.bme.ghiblistudiofilms.interactor.FilmsInteractor
 import hu.bme.ghiblistudiofilms.interactor.GetSingleFilmEvent
+import hu.bme.ghiblistudiofilms.model.FilmDataModel
 import hu.bme.ghiblistudiofilms.screen.DetailedScreen
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -28,8 +29,10 @@ class DetailedPresenter @Inject constructor(private val executor: Executor, priv
         }
     }
 
-    fun deleteFilm(id: String) {
-        //TODO
+    fun deleteFilm(film: FilmDataModel) {
+        executor.execute {
+            filmsInteractor.deleteFilm(film)
+        }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

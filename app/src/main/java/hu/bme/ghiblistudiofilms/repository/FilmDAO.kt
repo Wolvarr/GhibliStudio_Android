@@ -27,7 +27,5 @@ interface FilmDAO {
     @Insert
     fun insertFilm(vararg films: FilmDataModel)
 
-    @Delete
-    fun deleteFilm(film: FilmDataModel)
 
 }

@@ -15,5 +15,5 @@ data class FilmDataModel (
         val release_date: String,
         val running_time: Int,
         //if the user deletes an entity, that the API provides
-        val isDeleted: Boolean
+        var isDeleted: Boolean
         )
