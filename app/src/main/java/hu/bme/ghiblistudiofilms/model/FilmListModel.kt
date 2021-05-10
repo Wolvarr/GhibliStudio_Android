@@ -4,7 +4,7 @@ import java.util.*
 
 //Not saved to database
 data class FilmListModel(
-        val id: UUID,
-        val name: String,
+        val id: String,
+        val title: String,
         val originalName: String
 )

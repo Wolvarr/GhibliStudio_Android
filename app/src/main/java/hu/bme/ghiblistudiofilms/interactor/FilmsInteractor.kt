@@ -9,6 +9,7 @@ import org.greenrobot.eventbus.EventBus
 class FilmsInteractor  @Inject constructor(private val filmsApi: FilmsApi) {
 
     fun getFilms(fields: String? = null, limit: Long? = null) {
+        Log.d("Eljutunk ide lol:", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         val event = GetFilmsEvent()
 
         try {

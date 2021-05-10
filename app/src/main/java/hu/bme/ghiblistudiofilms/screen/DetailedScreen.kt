@@ -1,4 +1,7 @@
 package hu.bme.ghiblistudiofilms.screen
 
-class DetailedScreen {
+import hu.bme.ghiblistudiofilms.model.FilmDataModel
+
+interface DetailedScreen {
+    fun showFilmDetails(filmData: FilmDataModel)
 }

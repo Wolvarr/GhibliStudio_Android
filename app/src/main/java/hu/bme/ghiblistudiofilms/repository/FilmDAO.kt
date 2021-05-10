@@ -11,17 +11,17 @@ import java.util.*
 @Dao
 interface FilmDAO {
     @Query("SELECT id FROM ModifiedFilms")
-    fun getModifiedFilmIds(): List<UUID>
+    fun getModifiedFilmIds(): List<String>
 
     @Query("SELECT * FROM ModifiedFilms")
     fun getModifiedFilms(): List<FilmDataModel>
 
     //used when user get all films from the API, so we need to remove the ones that was locally "deleted"
     @Query("SELECT id FROM ModifiedFilms WHERE isDeleted = 1" )
-    fun getDeletedFilmIds(): List<UUID>
+    fun getDeletedFilmIds(): List<String>
 
     @Query("SELECT * FROM ModifiedFilms WHERE id = :id " )
-    fun getDFilmById(id: UUID): FilmDataModel
+    fun getDFilmById(id: String): FilmDataModel
 
     //used for delete too with IsDeleted flag = true
     @Insert
