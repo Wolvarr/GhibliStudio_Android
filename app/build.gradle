@@ -9,6 +9,13 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+
     defaultConfig {
         applicationId "hu.bme.ghiblistudiofilms"
         minSdkVersion 17
@@ -79,4 +86,15 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     kapt 'com.github.bumptech.glide:compiler:4.12.0'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.robolectric:robolectric:4.0.1"
+    testImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    testImplementation 'junit:junit:4.12'
+    // required if you want to use Mockito for unit tests
+    testImplementation 'org.mockito:mockito-core:2.24.5'
+    kaptTest 'com.google.dagger:dagger-compiler:2.0.2'
+    kaptAndroidTest 'com.google.dagger:dagger-compiler:2.0.2'
+
 }

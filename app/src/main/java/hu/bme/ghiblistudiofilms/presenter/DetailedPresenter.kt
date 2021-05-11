@@ -35,6 +35,12 @@ class DetailedPresenter @Inject constructor(private val executor: Executor, priv
         }
     }
 
+    fun createFilm(film: FilmDataModel) {
+        executor.execute {
+            filmsInteractor.createFilm(film)
+        }
+    }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onEventMainThread(event: GetSingleFilmEvent) {
         if (event.throwable != null) {

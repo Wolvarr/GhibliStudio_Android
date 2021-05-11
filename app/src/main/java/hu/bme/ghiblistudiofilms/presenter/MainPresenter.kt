@@ -27,6 +27,7 @@ class MainPresenter @Inject constructor(private val executor: Executor, private 
         }
     }
 
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onEventMainThread(event: GetFilmsEvent) {
         if (event.throwable != null) {

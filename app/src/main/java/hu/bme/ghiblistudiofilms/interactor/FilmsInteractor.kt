@@ -72,4 +72,9 @@ class FilmsInteractor  @Inject constructor(private val filmsApi: FilmsApi, priva
     fun getDeletedFilms() : List<String>{
         return appDatabase.filmDao().getDeletedFilmIds()
     }
+
+    fun createFilm(film: FilmDataModel)
+    {
+        appDatabase.filmDao().insertFilm(film)
+    }
 }

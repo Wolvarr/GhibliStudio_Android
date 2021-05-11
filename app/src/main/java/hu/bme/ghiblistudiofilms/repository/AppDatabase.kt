@@ -9,7 +9,6 @@ import hu.bme.ghiblistudiofilms.model.FilmDataModel
 @Database(entities=arrayOf(FilmDataModel::class), version = 4)
 abstract class AppDatabase :RoomDatabase() {
 
-    //TODO: A felhasználó által megadott változtatások lekérdezése az API-tól kapot adatokhoz képest (újonnan hozzáadott, törölt és szerkesztett filmek)
 
     abstract fun filmDao(): FilmDAO
 
@@ -21,6 +20,7 @@ abstract class AppDatabase :RoomDatabase() {
                 INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                     AppDatabase::class.java, "films.db")
                     .fallbackToDestructiveMigration()
+                    .allowMainThreadQueries()
                     .build()
             }
             return INSTANCE!!
